@@ -1,0 +1,16 @@
+{% extends "subpage.html" %}
+
+{% block content %}
+	<p>Test 1</p>
+	<script src="http://tapkee.lisitsyn.me/js/markdown.js" type="text/javascript" charset="utf-8"></script>
+	<div>
+		<script type="text/javascript">
+			get('http://raw.github.com/shogun-toolbox/shogun/develop/README.md',
+				function(data) {
+					var output = markdown.toHTML(data);
+					$(\"#readme\").html(output);
+				});
+		</script>
+	</div>
+	<p>Test 2</p>
+{% endblock %}
